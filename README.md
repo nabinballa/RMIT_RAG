@@ -1,59 +1,246 @@
-## RMIT RAG
+## RMIT RAG – v1 Baseline (Local, Ollama + Chroma)
 
-Modular RAG pipeline combining multiple CSV/XLSX sources into a Chroma vector store, with a CLI to index data and query using Ollama (e.g., llama3) and SentenceTransformers embeddings.
+Local-first RAG baseline using:
+- Ollama for LLM inference (default `mistral` – Mistral 7B Instruct)
+- SentenceTransformers for embeddings (default `all-MiniLM-L6-v2`)
+- Chroma as the vector store (on-disk)
 
-### Setup
+This repo provides a simple CLI workflow: ingest Q&A CSVs into Chroma, then query via a Make-driven interface. It mirrors the clarity of the Solara-DS docs, adapted to a local, non-Docker setup.
 
-1. Create and activate a virtual environment
+---
+
+## 1. Project Structure
+
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
+rmit-rag/
+├── api/
+│   ├── app.py             # Flask web server
+│   └── templates/
+│       └── index.html     # Web frontend interface
+│
+├── scripts/
+│   ├── build_index.py     # Ingest CSVs → documents + metadata → Chroma
+│   └── ask.py             # Query pipeline (retrieval + generation)
+│
+├── src/rmit_rag/
+│   ├── __init__.py
+│   ├── config.py          # Settings: chroma dir, ollama model
+│   ├── data_loader.py     # CSV loader + Q&A → documents/metadatas
+│   ├── interfaces.py      # Protocols for plug-and-play components
+│   ├── ingestion.py       # Ingestion helper (embed + upsert)
+│   ├── embedder.py        # SentenceTransformers wrapper
+│   ├── preprocess.py      # Optional cleaning utilities
+│   ├── vector_store.py    # Chroma wrapper
+│   └── rag.py             # RAGPipeline orchestration
+│
+├── data/                  # Put your CSVs here (question,answer)
+├── Makefile               # Make targets: index (i), ask (a), web
+├── requirements.txt
+└── README.md
 ```
 
-2. Install dependencies
+👉 Summary:
+- `api/` = web server and frontend
+- `scripts/` = CLI entrypoints
+- `src/` = core reusable logic
+- `data/` = your Q&A CSVs
+
+---
+
+## 2. Install Ollama
+
+Install and run Ollama, then pull a model (default used is `mistral`).
+
 ```bash
+# macOS (Homebrew)
+brew install ollama
+brew services start ollama
+
+# Pull the default model (Mistral 7B Instruct)
+ollama pull mistral
+```
+
+If you prefer another model (e.g., `llama3`), set `OLLAMA_MODEL` accordingly (see Environment below).
+
+---
+
+## 3. Setup
+
+```bash
+cd /Users/nabin/Desktop/rmit-rag
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-3. Ensure Ollama is installed and the model pulled
+Ensure your CSVs live under `./data` and have exactly these columns:
+- `question`
+- `answer`
+
+Example: `data/myki.csv`
+
+---
+
+## 4. Quick Start Flow
+
 ```bash
-# Install from https://ollama.com
+# 1) Build the vector index (auto-discovers *.csv in ./data)
+make i
+
+# 2) Ask a question (top-K retrieval)
+make a QUESTION="How do I get a travel pass?" K=5
+```
+
+Defaults:
+- `COLLECTION=combined_docs`
+- `QA_MODE=concat` (store combined question+answer text)
+- `K=5`
+
+---
+
+## 5. Make Targets
+
+```bash
+make i                   # Ingest CSVs from ./data (or DATA_DIR)
+make a QUESTION="..."    # Ask a question with retrieval (K default 5)
+make a                   # Interactive prompt (REPL): Enter question (or 'exit' to quit)
+make web                 # Start web server (default port 5000)
+```
+
+Advanced options:
+```bash
+# Provide explicit CSVs with labels (label = source tag in metadata)
+make i QA="./data/myki.csv:myki,./data/housing.csv:housing" CLEAR=1
+
+# Enable preprocessing (cleaning)
+make i PREPROCESS=1 PRE_TO_LOWER=1 PRE_STRIP_CONTROLS=1 PRE_NORMALIZE_SPACES=1 PRE_MIN_LENGTH=10
+
+# Change discovery directory
+make i DATA_DIR=./data
+
+# Web server options
+make web PORT=8080 FLASK_DEBUG=true
+```
+
+---
+
+## 6. Environment
+
+Optional environment variables (via shell or `.env`):
+
+```ini
+# Vector DB location (folder will be created if missing)
+CHROMA_DIR=chroma
+
+# Ollama model for generation
+OLLAMA_MODEL=mistral
+
+# Only relevant if reading spreadsheets elsewhere
+SHEET_NAME=Sheet1
+
+# Web server settings
+PORT=5000
+FLASK_DEBUG=false
+```
+
+You can set a different default model globally:
+
+```bash
 ollama pull llama3
+echo 'export OLLAMA_MODEL=llama3' >> ~/.zshrc && source ~/.zshrc
 ```
 
-### Project Structure
-```
-src/rmit_rag/
-  __init__.py
-  config.py
-  data_loader.py
-  embedder.py
-  vector_store.py
-  rag.py
-scripts/
-  build_index.py
-  ask.py
-```
+---
 
-### Data
-Place your files under `data/`:
-- `rmit_housing_full.xlsx` (Sheet1)
-- `emergency.csv`
-- `oshc.csv`
+## 7. Data Prep
 
-### Usage
+Prepare one or more CSVs with columns `question,answer`.
 
-Build the index:
+Examples:
 ```bash
-python scripts/build_index.py --data-dir ./data --collection combined_docs
+data/travel_pass.csv
+data/housing.csv
+data/driving_license.csv
 ```
 
-Ask a question:
+Modes when converting rows to documents:
+- `concat` (default): concatenates question + answer into one text field
+- `answer`: uses only the answer text for embedding/retrieval
+
+Control via `QA_MODE=concat|answer` when running `make i`.
+
+---
+
+## 8. Developer Notes
+
+- Embedder: `rmit_rag.embedder.Embedder` implements `rmit_rag.interfaces.EmbedderProtocol`
+- Vector DB: `rmit_rag.vector_store.VectorStore` implements `rmit_rag.interfaces.VectorStoreProtocol`
+- Ingestion helper: `rmit_rag.ingestion.ingest_documents(embedder, store, documents, metadatas)`
+- Converters:
+  - `rmit_rag.data_loader.load_qa_csv(path)`
+  - `rmit_rag.data_loader.qa_dataframe_to_documents(df, mode="concat"|"answer")`
+
+Wire custom components by passing them into `RAGPipeline`:
+
+```python
+from rmit_rag.rag import RAGPipeline
+from rmit_rag.embedder import Embedder
+from rmit_rag.vector_store import VectorStore
+from rmit_rag.config import settings
+
+embedder = Embedder("all-MiniLM-L6-v2")
+store = VectorStore("combined_docs", persist_directory=settings.chroma_dir)
+pipeline = RAGPipeline("combined_docs", embedder=embedder, store=store)
+```
+
+---
+
+## 9. Troubleshooting
+
+- Ollama not running
+  - Start: `brew services start ollama` (macOS) or run `ollama serve` in a separate terminal
+  - Pull a model: `ollama pull mistral`
+
+- No CSVs found
+  - Ensure files exist under `./data` and have columns `question,answer`
+
+- Rebuild from scratch
+  - Use `CLEAR=1` with `make i` to reset the collection before ingest
+
+- Change collection name
+  - Pass `COLLECTION=your_collection` to both `make i` and `make a`
+
+---
+
+## 10. Web Interface
+
+Start the web server:
 ```bash
-python scripts/ask.py --collection combined_docs "What are the average shared room prices in Carlton?"
+make web
 ```
 
-### Environment
-Optional `.env` variables:
-- `CHROMA_DIR` (default: `chroma`)
-- `OLLAMA_MODEL` (default: `llama3`)
-- `SHEET_NAME` (default: `Sheet1`)
+Then open your browser to `http://localhost:5000` for a clean web interface to ask questions.
+
+Features:
+- Clean, modern UI
+- Real-time status checking
+- Adjustable retrieval count (K)
+- Error handling and loading states
+
+---
+
+## 11. Examples
+
+```bash
+# Minimal ingest and query
+make i
+make a QUESTION="How do I renew a driving license?" K=5
+
+# Label sources explicitly and clean text
+make i QA="./data/myki.csv:myki,./data/housing.csv:housing" CLEAR=1 \
+  PREPROCESS=1 PRE_TO_LOWER=1 PRE_STRIP_CONTROLS=1 PRE_NORMALIZE_SPACES=1 PRE_MIN_LENGTH=10
+
+# Start web interface
+make web PORT=8080
+```
+

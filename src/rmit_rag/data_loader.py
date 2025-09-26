@@ -1,31 +1,65 @@
 from __future__ import annotations
 from pathlib import Path
 import pandas as pd
-from .config import settings
 
 
-def load_sources(data_dir: str | Path,
-                 housing_xlsx: str = "rmit_housing_full.xlsx",
-                 emergency_csv: str = "emergency.csv",
-                 oshc_csv: str = "oshc.csv") -> pd.DataFrame:
-    data_path = Path(data_dir)
+# --- Q&A ingestion helpers ---
+def load_qa_csv(csv_path: str | Path,
+                question_col: str = "question",
+                answer_col: str = "answer",
+                source_label: str = "qa") -> pd.DataFrame:
+    """Load a Q&A CSV into a dataframe.
 
-    housing_path = data_path / housing_xlsx
-    emergency_path = data_path / emergency_csv
-    oshc_path = data_path / oshc_csv
+    Parameters:
+    - csv_path: path to the CSV file containing Q&A rows
+    - question_col: name of the question column (default: "question")
+    - answer_col: name of the answer column (default: "answer")
+    - source_label: sector/source label to attach to each row (e.g., "travel_pass")
 
-    housing_df = pd.read_excel(housing_path, sheet_name=settings.sheet_name)
-    housing_df["source"] = "housing"
+    Returns:
+    - A pandas DataFrame with the original columns plus a `source` column
+    """
+    path = Path(csv_path)
+    df = pd.read_csv(path)
+    if question_col not in df.columns or answer_col not in df.columns:
+        missing = {question_col, answer_col} - set(df.columns)
+        raise ValueError(f"Q&A CSV missing required columns: {missing}")
+    df = df.copy()
+    df["source"] = source_label
+    return df
 
-    emergency_df = pd.read_csv(emergency_path)
-    emergency_df["source"] = "emergency"
 
-    oshc_df = pd.read_csv(oshc_path)
-    oshc_df["source"] = "oshc"
+def qa_dataframe_to_documents(
+    df: pd.DataFrame,
+    *,
+    question_col: str = "question",
+    answer_col: str = "answer",
+    mode: str = "concat",
+) -> tuple[list[str], list[dict]]:
+    """Convert a Q&A dataframe into model-ingestable documents and aligned metadatas.
 
-    combined = pd.concat([emergency_df, oshc_df, housing_df], ignore_index=True)
-    return combined
+    Parameters:
+    - df: dataframe produced by `load_qa_csv`
+    - question_col/answer_col: column names containing the text
+    - mode:
+        - "concat": document is "Q: <question>\nA: <answer>"
+        - "answer": document is just the answer text
 
-
-def dataframe_to_documents(df: pd.DataFrame) -> list[str]:
-    return df.astype(str).apply(lambda row: " | ".join(row.values), axis=1).tolist()
+    Returns:
+    - (documents, metadatas) where `metadatas[i]` corresponds to `documents[i]`
+    """
+    docs: list[str] = []
+    metas: list[dict] = []
+    for _, row in df.iterrows():
+        q = str(row[question_col])
+        a = str(row[answer_col])
+        if mode == "answer":
+            doc = a
+        else:
+            doc = f"Q: {q}\nA: {a}"
+        docs.append(doc)
+        metas.append({
+            "source": str(row.get("source", "qa")),
+            "question": q,
+        })
+    return docs, metas
