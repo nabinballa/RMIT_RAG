@@ -6,7 +6,6 @@ venv/
 .env/
 .env.*
 .DS_Store
-/data/
 *.sqlite3
 chroma/
 .vscode/
