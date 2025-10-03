@@ -37,4 +37,8 @@ class VectorStore:
 
     def query(self, *, query_embeddings: Sequence[Sequence[float]], n_results: int = 5):
         """Retrieve top matches for the given query embeddings."""
-        return self._collection.query(query_embeddings=list(query_embeddings), n_results=n_results)
+        return self._collection.query(
+            query_embeddings=list(query_embeddings), 
+            n_results=n_results,
+            include=["documents", "metadatas", "distances"]  # Only get what we need
+        )

@@ -5,6 +5,7 @@ from .embedder import Embedder
 from .vector_store import VectorStore
 from .config import settings
 from .interfaces import EmbedderProtocol, VectorStoreProtocol
+from .personality import get_personality_config
 
 
 class RAGPipeline:
@@ -49,23 +50,26 @@ class RAGPipeline:
         query_embedding = self.embedder.encode([question])
         results = self.store.query(query_embeddings=query_embedding, n_results=n_results)
         context = " ".join(results["documents"][0]) if results and results.get("documents") else ""
-        prompt = (
-            "Answer the question using ONLY the provided context. "
-            "Return a single concise paragraph (no bullet points or numbered lists). "
-            "If the context lacks sufficient information, answer with exactly: "
-            "'I don't have enough information to answer this question based on the provided context.'\n"
-            f"Context: {context}\n"
-            f"Question: {question}\n"
-        )
+        # Get personality configuration
+        system_prompt, user_template, temperature = get_personality_config(settings.personality_level)
+        
+        # Use custom temperature if provided, otherwise use personality default
+        final_temperature = settings.temperature if settings.temperature != 0.4 else temperature
+        
+        prompt = user_template.format(context=context, question=question)
+        
         response = ollama.chat(
             model=settings.ollama_model,
             messages=[
-                {"role": "system", "content": "You respond with a single concise paragraph. No lists or headings."},
+                {"role": "system", "content": system_prompt},
                 {"role": "user", "content": prompt},
             ],
             options={
-                "temperature": 0.2,
+                "temperature": final_temperature,
                 "top_p": 0.9,
+                "num_predict": settings.max_response_length,  # Limit response length for faster generation
+                "num_ctx": settings.context_window,           # Limit context window for faster processing
+                "stop": ["\n\n", "Question:", "Context:"],    # Stop tokens for faster generation
             },
         )
         return response["message"]["content"]

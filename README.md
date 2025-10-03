@@ -141,6 +141,15 @@ SHEET_NAME=Sheet1
 # Web server settings
 PORT=5000
 FLASK_DEBUG=false
+
+# Personality settings
+PERSONALITY_LEVEL=friendly  # friendly, professional, casual, enthusiastic
+TEMPERATURE=0.4            # 0.1-1.0, higher = more creative
+
+# Performance settings (for faster responses)
+MAX_RESPONSE_LENGTH=512    # Limit response length (lower = faster)
+CONTEXT_WINDOW=2048        # Limit context window (lower = faster)
+BATCH_SIZE=32              # Embedding batch size (higher = faster for bulk operations)
 ```
 
 You can set a different default model globally:
@@ -195,7 +204,30 @@ pipeline = RAGPipeline("combined_docs", embedder=embedder, store=store)
 
 ---
 
-## 9. Troubleshooting
+## 9. Performance Optimization
+
+### Speed Up Responses:
+```bash
+# Faster responses (shorter, more focused)
+export MAX_RESPONSE_LENGTH=256
+export CONTEXT_WINDOW=1024
+make web
+
+# Use smaller embedding model for faster encoding
+# Edit src/rmit_rag/embedder.py and change model to "all-MiniLM-L12-v2"
+```
+
+### Hardware Acceleration:
+- **Apple Silicon**: Automatically uses MPS (Metal Performance Shaders)
+- **NVIDIA GPU**: Automatically uses CUDA if available
+- **CPU**: Optimized with threading and caching
+
+### Caching:
+- Embedding models are cached globally (no reloading between requests)
+- Vector store uses optimized queries
+- Ollama model stays loaded in memory
+
+## 10. Troubleshooting
 
 - Ollama not running
   - Start: `brew services start ollama` (macOS) or run `ollama serve` in a separate terminal
@@ -210,9 +242,14 @@ pipeline = RAGPipeline("combined_docs", embedder=embedder, store=store)
 - Change collection name
   - Pass `COLLECTION=your_collection` to both `make i` and `make a`
 
+- Slow responses
+  - Reduce `MAX_RESPONSE_LENGTH` and `CONTEXT_WINDOW`
+  - Use smaller embedding model
+  - Ensure Ollama is running locally (not over network)
+
 ---
 
-## 10. Web Interface
+## 11. Web Interface
 
 Start the web server:
 ```bash
@@ -222,14 +259,17 @@ make web
 Then open your browser to `http://localhost:5000` for a clean web interface to ask questions.
 
 Features:
-- Clean, modern UI
+- Clean, modern UI with chat interface
 - Real-time status checking
 - Adjustable retrieval count (K)
+- **4 Personality modes**: Friendly 😊, Professional 👔, Casual 😎, Enthusiastic 🎉
+- **Creativity slider**: Adjust response creativity (0.1-1.0)
 - Error handling and loading states
+- Message history and typing indicators
 
 ---
 
-## 11. Examples
+## 12. Examples
 
 ```bash
 # Minimal ingest and query
@@ -242,5 +282,10 @@ make i QA="./data/myki.csv:myki,./data/housing.csv:housing" CLEAR=1 \
 
 # Start web interface
 make web PORT=8080
+
+# Set personality and temperature
+export PERSONALITY_LEVEL=enthusiastic
+export TEMPERATURE=0.6
+make web
 ```
 

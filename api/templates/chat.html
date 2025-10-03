@@ -357,6 +357,21 @@
         </div>
 
         <div class="settings-group">
+            <label for="personalitySelect">Personality:</label>
+            <select id="personalitySelect">
+                <option value="friendly">Friendly 😊</option>
+                <option value="professional">Professional 👔</option>
+                <option value="casual">Casual 😎</option>
+                <option value="enthusiastic">Enthusiastic 🎉</option>
+            </select>
+        </div>
+
+        <div class="settings-group">
+            <label for="temperatureSlider">Creativity: <span id="temperatureValue">0.4</span></label>
+            <input type="range" id="temperatureSlider" min="0.1" max="1.0" step="0.1" value="0.4">
+        </div>
+
+        <div class="settings-group">
             <label for="modelSelect">Model:</label>
             <select id="modelSelect">
                 <option value="mistral">Mistral 7B</option>
@@ -374,6 +389,8 @@
     <script>
         let chatHistory = [];
         let currentK = 5;
+        let currentPersonality = "friendly";
+        let currentTemperature = 0.4;
 
         // Auto-resize textarea
         const chatInput = document.getElementById('chatInput');
@@ -392,7 +409,12 @@
                 
                 if (response.ok) {
                     statusDot.classList.add('online');
-                    statusText.textContent = `Connected (${data.model})`;
+                    statusText.textContent = `Connected (${data.model}) - ${data.personality}`;
+                    
+                    // Update settings panel with current values
+                    document.getElementById('personalitySelect').value = data.personality;
+                    document.getElementById('temperatureSlider').value = data.temperature;
+                    document.getElementById('temperatureValue').textContent = data.temperature;
                 } else {
                     statusDot.classList.remove('online');
                     statusText.textContent = 'API Error';
@@ -440,8 +462,9 @@
             addMessage(message, true);
             chatHistory.push({ role: 'user', content: message });
 
-            // Show typing indicator
+            // Show typing indicator with progress
             showTyping(true);
+            updateTypingMessage("Processing your question...");
 
             // Disable input
             const chatInput = document.getElementById('chatInput');
@@ -450,6 +473,7 @@
             sendButton.disabled = true;
 
             try {
+                const startTime = Date.now();
                 const response = await fetch('/api/ask', {
                     method: 'POST',
                     headers: {
@@ -457,14 +481,18 @@
                     },
                     body: JSON.stringify({ 
                         question: message, 
-                        k: currentK 
+                        k: currentK,
+                        stream: false  // Set to true for streaming if implemented
                     })
                 });
 
                 const data = await response.json();
+                const responseTime = ((Date.now() - startTime) / 1000).toFixed(2);
 
                 if (response.ok) {
-                    addMessage(data.answer);
+                    // Add response time to the message
+                    const answerWithTime = data.answer + (data.response_time ? `\n\n⚡ Response time: ${data.response_time}s` : '');
+                    addMessage(answerWithTime);
                     chatHistory.push({ role: 'assistant', content: data.answer });
                 } else {
                     addMessage(`Error: ${data.error}`, false, true);
@@ -476,6 +504,15 @@
                 chatInput.disabled = false;
                 sendButton.disabled = false;
                 chatInput.focus();
+            }
+        }
+
+        // Update typing message
+        function updateTypingMessage(message) {
+            const typingIndicator = document.getElementById('typingIndicator');
+            const messageSpan = typingIndicator.querySelector('span');
+            if (messageSpan) {
+                messageSpan.textContent = message;
             }
         }
 
@@ -514,10 +551,44 @@
             }
         }
 
-        // Update K value
+        // Update settings
         document.getElementById('kValue').addEventListener('change', (e) => {
             currentK = parseInt(e.target.value);
         });
+
+        document.getElementById('personalitySelect').addEventListener('change', async (e) => {
+            currentPersonality = e.target.value;
+            await updateConfig();
+        });
+
+        document.getElementById('temperatureSlider').addEventListener('input', async (e) => {
+            currentTemperature = parseFloat(e.target.value);
+            document.getElementById('temperatureValue').textContent = currentTemperature;
+            await updateConfig();
+        });
+
+        // Update server configuration
+        async function updateConfig() {
+            try {
+                const response = await fetch('/api/config', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        personality: currentPersonality,
+                        temperature: currentTemperature
+                    })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Config updated:', data);
+                }
+            } catch (error) {
+                console.error('Failed to update config:', error);
+            }
+        }
 
         // Initialize
         checkStatus();
