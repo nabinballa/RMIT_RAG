@@ -6,10 +6,12 @@ venv/
 .env/
 .env.*
 .DS_Store
-/data/
 *.sqlite3
 chroma/
 .vscode/
 .idea/
 logs/
 *.log
+.env
+__pycache__/
+*.pyc
