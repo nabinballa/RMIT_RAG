@@ -15,6 +15,7 @@ from rmit_rag.embedder import Embedder
 from rmit_rag.vector_store import VectorStore
 from rmit_rag.config import settings
 from rmit_rag.personality import get_available_personalities
+from rmit_rag.cache import clear_cache, get_cache_stats
 
 app = Flask(__name__)
 
@@ -45,7 +46,7 @@ def ask_question():
     try:
         data = request.get_json()
         question = data.get("question", "").strip()
-        k = int(data.get("k", 5))
+        k = int(data.get("k", 3))  # Default to 3 for faster responses
         stream = data.get("stream", False)
         
         if not question:
@@ -135,6 +136,24 @@ def update_config():
             "personality": os.environ.get("PERSONALITY_LEVEL", "friendly"),
             "temperature": float(os.environ.get("TEMPERATURE", "0.4"))
         })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/cache/clear", methods=["POST"])
+def clear_response_cache():
+    """Clear the response cache."""
+    try:
+        clear_cache()
+        return jsonify({"message": "Cache cleared successfully"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/cache/stats", methods=["GET"])
+def get_cache_statistics():
+    """Get cache statistics."""
+    try:
+        stats = get_cache_stats()
+        return jsonify(stats)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

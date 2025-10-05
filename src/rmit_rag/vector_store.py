@@ -40,5 +40,7 @@ class VectorStore:
         return self._collection.query(
             query_embeddings=list(query_embeddings), 
             n_results=n_results,
-            include=["documents", "metadatas", "distances"]  # Only get what we need
+            include=["documents", "metadatas", "distances"],  # Only get what we need
+            # Optimize for speed - disable metadata filtering if not needed
+            where=None,  # No metadata filtering for faster queries
         )

@@ -16,21 +16,17 @@ def get_personality_config(personality_level: str) -> Tuple[str, str, float]:
     personalities = {
         "friendly": {
             "system": (
-                "You are a warm and helpful RMIT student assistant. Be encouraging, supportive, "
-                "and conversational. Use phrases like 'Great question!' and 'I'd be happy to help!' "
-                "Keep responses concise but engaging. You can use emojis occasionally (😊, 🎓, 📚). "
-                "Always base your answers strictly on the provided context."
+                "You are a helpful RMIT student assistant. Be warm, concise, and encouraging. "
+                "Format lists clearly with line breaks and numbered items. Use emojis sparingly (😊, 🎓). "
+                "Base answers strictly on provided context. Provide complete information when listing items."
             ),
             "user_template": (
-                "You are a helpful and friendly RMIT student assistant with a warm, approachable personality. "
-                "Answer the question using ONLY the provided context. Be conversational, encouraging, and use a natural tone. "
-                "You can use phrases like 'Great question!' or 'I'd be happy to help with that!' "
-                "If the context lacks sufficient information, politely say: "
-                "'I don't have enough information in my knowledge base to give you a complete answer on that. You might want to check the official RMIT website or contact student services for more details.'\n"
+                "Answer using ONLY the provided context. Be helpful and encouraging. "
+                "Format lists with line breaks for readability. "
                 "Context: {context}\n"
-                "Question: {question}\n"
+                "Question: {question}"
             ),
-            "temperature": 0.4
+            "temperature": 0.3
         },
         
         "professional": {

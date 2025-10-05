@@ -6,6 +6,7 @@ from .vector_store import VectorStore
 from .config import settings
 from .interfaces import EmbedderProtocol, VectorStoreProtocol
 from .personality import get_personality_config
+from .cache import get_cached_response, cache_response
 
 
 class RAGPipeline:
@@ -42,14 +43,21 @@ class RAGPipeline:
             metadatas=metadatas,
         )
 
-    def query(self, question: str, n_results: int = 5) -> str:
+    def query(self, question: str, n_results: int = 3) -> str:
         """Retrieve top-matching documents and ask the chat model to answer.
 
         Builds a strict prompt to constrain answers to retrieved context.
         """
+        # Check cache first for instant responses
+        cached_response = get_cached_response(question)
+        if cached_response:
+            return cached_response
+            
+        # Optimize: encode single query efficiently
         query_embedding = self.embedder.encode([question])
         results = self.store.query(query_embeddings=query_embedding, n_results=n_results)
-        context = " ".join(results["documents"][0]) if results and results.get("documents") else ""
+        # Optimize: limit to top 3 documents and join efficiently
+        context = "\n".join(results["documents"][0][:3]) if results and results.get("documents") else ""
         # Get personality configuration
         system_prompt, user_template, temperature = get_personality_config(settings.personality_level)
         
@@ -65,11 +73,21 @@ class RAGPipeline:
                 {"role": "user", "content": prompt},
             ],
             options={
-                "temperature": final_temperature,
-                "top_p": 0.9,
+                "temperature": min(final_temperature, 0.3),  # Lower temperature for faster, more deterministic generation
+                "top_p": 0.8,           # Reduce sampling space for faster generation
                 "num_predict": settings.max_response_length,  # Limit response length for faster generation
                 "num_ctx": settings.context_window,           # Limit context window for faster processing
-                "stop": ["\n\n", "Question:", "Context:"],    # Stop tokens for faster generation
+                "stop": ["Question:", "Context:"],  # Stop tokens for faster generation
+                "top_k": 15,           # Reduce sampling space for faster generation
+                "repeat_penalty": 1.05, # Prevent repetition for cleaner responses
+                "tfs_z": 0.9,         # Tail free sampling for faster generation
+                "seed": 42,            # Deterministic generation for consistency
             },
         )
-        return response["message"]["content"]
+        
+        response_content = response["message"]["content"]
+        
+        # Cache the response for future queries
+        cache_response(question, response_content)
+        
+        return response_content

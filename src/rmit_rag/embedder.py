@@ -80,7 +80,7 @@ class Embedder:
                 batch_size=self.batch_size,
                 show_progress_bar=False,
                 convert_to_tensor=False,
-                normalize_embeddings=False,  # Skip normalization for speed
+                normalize_embeddings=True,  # Enable normalization for better similarity search
                 device=None  # Use model's device
             ).tolist()
             
