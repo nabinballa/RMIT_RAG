@@ -1,0 +1,355 @@
+Average Retrieval Precision: 0.83
+Average BERTScore F1 (Relevant Queries): 0.82
+Average ROUGE-L F1 (Relevant Queries): 0.28
+Average Faithfulness Score (Irrelevant Queries Only): 0.00
+Average Fallback Accuracy (Irrelevant Queries): 0.00
+
+Query: How far is Fitzroy from RMIT and what are the commute options? (exact)
+Answer: Fitzroy is approximately 2.5 kilometers from RMIT University's City Campus. Here are some common commuting options:
+
+1. Tram: The most convenient way to travel between Fitzroy and RMIT is by using the tram service. Tram routes 86, 11, and 109 all pass near both locations.
+
+2. Bus: Several bus routes also connect Fitzroy and RMIT, including routes 250, 251, and 253.
+
+3. Bicycle: If you prefer an active commute, there are bike lanes available along much of the route between Fitzroy and RMIT.
+
+4. Walk
+Precision: 1.00
+BERTScore F1: 0.80
+ROUGE-L F1: 0.17
+Faithfulness: 0.00
+
+Query: How far is Melbourne CBD from RMIT and what are the commute options? (exact)
+Answer: The RMIT University is located in the heart of Melbourne CBD, making it easily accessible by various modes of transportation. Here are some common commuting options:
+
+1. Tram: RMIT is served by several trams, including routes 96, 112, and 48. The closest stops to the university are Stop 3 (Swanston Street/Bourke Street) and Stop 5 (Swanston Street/La Trobe Street).
+
+2. Train: The closest train stations to RMIT are Flagstaff Station and Melbourne Central Station, both of which are within a short walking distance from the campus.
+
+3. Bus: Several bus routes also stop near RMIT, including
+Precision: 1.00
+BERTScore F1: 0.77
+ROUGE-L F1: 0.12
+Faithfulness: 0.00
+
+Query: Why is Melbourne CBD popular among students? (exact)
+Answer: Melbourne CBD (Central Business District) is popular among students for several reasons:
+
+1. Accessibility: The CBD is well-connected by public transport, making it easy for students to commute to their educational institutions, workplaces, and other destinations.
+
+2. Amenities: The CBD offers a wide range of amenities such as libraries, bookstores, cafes, restaurants, shopping centers, and entertainment venues, catering to the diverse needs and interests of students.
+
+3. Education Institutions: Melbourne CBD is home to many renowned universities, colleges, and schools, attracting students from around the world.
+
+4. Vibrant Culture: Melbourne CBD is known for its
+Precision: 1.00
+BERTScore F1: 0.73
+ROUGE-L F1: 0.14
+Faithfulness: 0.00
+
+Query: What's the typical weekly cost for shared housing in Melbourne CBD? (inferred)
+Answer: The typical weekly cost for shared housing in Melbourne CBD can vary significantly depending on factors such as location, amenities, and quality of the accommodation. However, as a rough estimate, you might expect to pay between AUD 150 to AUD 300 per week for a shared room in a house or apartment. For a private room, the cost could be anywhere from AUD 200 to AUD 400 per week. Keep in mind that these are just averages and actual costs may be higher or lower based on the specific circumstances. It's always a good idea to research multiple options and compare prices to find the best fit for your budget.
+Precision: 1.00
+BERTScore F1: 0.79
+ROUGE-L F1: 0.16
+Faithfulness: 0.00
+
+Query: How long does it take to walk from RMIT to Melbourne CBD? (inferred)
+Answer: The walking distance from RMIT University to Melbourne CBD varies depending on the exact starting and ending points. However, a common route is from RMIT's City Campus to the Melbourne CBD, which takes approximately 10-15 minutes to walk, covering a distance of around 1.2 kilometers (0.75 miles). Keep in mind that this is an estimate and actual time may vary based on factors such as your walking pace and any potential obstacles along the route. For more precise information, you can refer to maps or directions provided by RMIT or Google Maps.
+Precision: 1.00
+BERTScore F1: 0.77
+ROUGE-L F1: 0.17
+Faithfulness: 0.00
+
+Query: Where can I get a Myki? (exact)
+Answer: You can obtain a Myki from vending machines or over the counter. These can be found at train stations, trams, and major bus interchanges in Melbourne, Australia. Additionally, you can purchase a Myki online and have it delivered to your home.
+Precision: 1.00
+BERTScore F1: 0.84
+ROUGE-L F1: 0.33
+Faithfulness: 0.00
+
+Query: How much does getting a Myki card cost? (exact)
+Answer: The cost of getting a Myki card varies depending on the type you choose. Here's a breakdown:
+
+1. Full fare Myki card: This is a reusable card that can be used for both Myki Money and Myki Pass. The cost is $6 when purchased from a vending machine or retailer, or $10 when purchased on a train or tram.
+
+2. Concession Myki card: This is for eligible concession card holders. The cost is $3.50 when purchased from a vending machine or retailer, or $6 when purchased on a train or tram.
+
+3. Child Myki card: This is for children aged 4-
+Precision: 1.00
+BERTScore F1: 0.81
+ROUGE-L F1: 0.25
+Faithfulness: 0.00
+
+Query: Where can I add money to my Myki card? (exact)
+Answer: You can add money to your Myki card at several locations:
+
+1. At a Myki Machine: These are available at most train stations, trams, and some buses in Melbourne.
+
+2. Online: Through the PTV website or the myki mobile app.
+
+3. At a 7-Eleven store: You can top up your myki card at any 7-Eleven store in Victoria.
+
+4. At a PTV Hub: These are located at Southern Cross Station, Flinders Street Station, and some regional stations.
+
+5. By phone: You can call the PTV Customer Service Centre on 1800 800 0
+Precision: 1.00
+BERTScore F1: 0.84
+ROUGE-L F1: 0.25
+Faithfulness: 0.00
+
+Query: Where do I buy a Myki card? (inferred)
+Answer: You can purchase a Myki card at several locations:
+
+1. Premium Metro stations
+2. Staffed V/Line stations
+3. PTV Hubs (selected retail outlets)
+4. Online through the Public Transport Victoria website
+5. By post (you'll need to register and pay for the card online, then wait for it to arrive in the mail)
+
+You can also find Myki cards at selected newsagents, convenience stores, and supermarkets across Victoria. For a complete list of retailers, you can visit the Public Transport Victoria website.
+Precision: 1.00
+BERTScore F1: 0.81
+ROUGE-L F1: 0.31
+Faithfulness: 0.00
+
+Query: What's the price for a concession Myki? (inferred)
+Answer: The price for a concession Myki varies depending on the type of pass you are referring to. Here is a breakdown of the current prices as of 2021:
+
+1. Concession Myki Explorer Pass (Daily): $6.50
+2. Concession Myki Money (top-up amount): $10, $20, $30, $40, $50
+3. Concession Myki Monthly Pass: $48.30 (Metro only)
+4. Concession Myki Weekly Pass: $24.10 (Metro only)
+
+Please note that these prices are subject to change and
+Precision: 1.00
+BERTScore F1: 0.79
+ROUGE-L F1: 0.20
+Faithfulness: 0.00
+
+Query: What is ahm OSHC and how can I contact them? (exact)
+Answer: ahm OSHC stands for Australian Health Management (AHM) Over seas Students Health Cover. It is a health insurance product designed for international students studying in Australia, provided by Medibank Private.
+
+You can contact ahm OSHC through the following channels:
+
+- Phone: 134148 (within Australia) or +61 3 8635 9800 (outside Australia)
+- Email: oshc@ahm.com.au
+- Website: https://www.ahmoshc.com.au/
+
+For specific inquiries or to purchase a policy, you can visit their official website or contact them via the provided
+Precision: 1.00
+BERTScore F1: 0.84
+ROUGE-L F1: 0.26
+Faithfulness: 0.00
+
+Query: What is Allianz Care Australia OSHC and how can I contact them? (exact)
+Answer: Allianz Care Australia OSHC (Overseas Student Health Cover) is a health insurance service designed for international students studying in Australia. It provides medical and hospital cover, as well as emergency ambulance services, for the duration of their studies.
+
+You can contact Allianz Care Australia OSHC through various methods:
+
+1. Phone:
+   - In Australia: 1300 466 255
+   - Offshore: +61 7 3305 8841
+
+2. Email: oshc@allianz-assistance.com.au
+3. Website: www.allianzworldwidecare.com
+Precision: 1.00
+BERTScore F1: 0.83
+ROUGE-L F1: 0.26
+Faithfulness: 0.00
+
+Query: What is BUPA Australia OSHC and how can I contact them? (exact)
+Answer: BUPA Australia OSHC (Overseas Student Health Cover) is a health insurance designed for international students studying in Australia. It provides medical cover for students during their study period, as a requirement for obtaining a student visa.
+
+To contact BUPA Australia OSHC, you can use the following methods:
+
+- Phone: 1800 888 942 (within Australia) and +61 3 9937 4223 (offshore)
+- Email: oshc@bupa.com.au
+- Website: www.bupa.com.au/oshc
+
+You can also find more information about the
+Precision: 1.00
+BERTScore F1: 0.86
+ROUGE-L F1: 0.34
+Faithfulness: 0.00
+
+Query: How do I reach ahm for student health insurance? (inferred)
+Answer: You can reach ahm (AHM OSHC, which is a business of Medibank Private) for student health insurance through several methods:
+
+1. Phone: You can call them at 134148 within Australia or +61 3 9428 7500 from overseas.
+
+2. Email: You can send an email to oshc@ahm.com.au.
+
+3. Website: You can visit their website at www.ahmoshc.com.au to get more information, arrange your cover, or get a quote.
+
+4. Live Chat: There is also a live chat option available on their website for immediate assistance.
+Precision: 1.00
+BERTScore F1: 0.81
+ROUGE-L F1: 0.23
+Faithfulness: 0.00
+
+Query: What's Allianz OSHC support number? (inferred)
+Answer: The support number for Allianz OSHC is 13 2480 (within Australia) and +61 7 3305 8841 (offshore). You can also reach them via email at oshc@allianzcare.com.au. For new RMIT students in Melbourne, it's important to ensure that your policy matches your arrival and departure dates, and the app provides easy access to your cover details.
+Precision: 1.00
+BERTScore F1: 0.83
+ROUGE-L F1: 0.34
+Faithfulness: 0.00
+
+Query: How to apply & ABN entitlement (exact)
+Answer: To apply for an Australian Business Number (ABN) as a foreign resident, follow these steps:
+
+1. Visit the Australian Taxation Office (ATO) website at <https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/foreign-residents-doing-business-in-australia/australian-business-number-abn-for-non-residents>
+2. Read the information provided to determine if you are eligible for an ABN.
+3. If eligible, complete the online application form. You will need to provide details about your business, identity, and taxation requirements.
+4.
+Precision: 1.00
+BERTScore F1: 0.87
+ROUGE-L F1: 0.41
+Faithfulness: 0.00
+
+Query: Processing your ABN application (exact)
+Answer: If you're applying for an Australian Business Number (ABN), the process typically involves the following steps:
+
+1. Visit the Australian Business Register (ABR) website at https://www.ato.gov.au/business/register-for-an-abn/.
+2. Click on "Apply for an ABN" and follow the prompts to start your application.
+3. You'll be asked to provide personal details, such as your name, address, and tax file number (TFN). If you don't have a TFN, you can still apply for an ABN, but you may need to provide additional documentation.
+4. Once you've provided all the necessary information, you
+Precision: 1.00
+BERTScore F1: 0.82
+ROUGE-L F1: 0.20
+Faithfulness: 0.00
+
+Query: Reference number ABN path (exact)
+Answer: If you are a foreign resident planning to operate as an independent contractor or run a business in Australia, you will need to apply for an Australian Business Number (ABN). The process involves applying through the Australian Business Register (ABR) and, in some cases, you may receive a reference number while your application is being processed. For more information, visit: https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/foreign-residents-doing-business-in-australia/australian-business-number-abn/applying-for-an-abn/
+Precision: 1.00
+BERTScore F1: 0.88
+ROUGE-L F1: 0.47
+Faithfulness: 0.00
+
+Query: Who can get an ABN in Australia? (inferred)
+Answer: To be eligible for an Australian Business Number (ABN), you must be carrying on an enterprise in Australia. An enterprise can be a business, but it can also be a not-for-profit organization, a club, or any other association that is running on a continuous basis.
+
+Here are some examples of people who may be eligible for an ABN:
+
+1. Sole traders (individuals who run their own business)
+2. Partnerships
+3. Companies
+4. Trusts
+5. Statutory bodies
+6. Income tax exempt charities
+7. Non-profit organizations
+8. Government departments and agencies
+9. Foreign governments and their political agencies
+10.
+Precision: 1.00
+BERTScore F1: 0.75
+ROUGE-L F1: 0.13
+Faithfulness: 0.00
+
+Query: How long to process ABN request? (inferred)
+Answer: The Australian Taxation Office (ATO) aims to process most ABN applications within 14 days. However, if your application is unsuccessful, you will receive a refusal number and a letter explaining the reasons within 14 days. For more information, visit the ATO's website at https://www.ato.gov.au/businesses-and-organisations/international-tax-for-business/foreign-residents-doing-business-in-australia/australian-business-number-abn-for-non-residents.
+Precision: 1.00
+BERTScore F1: 0.93
+ROUGE-L F1: 0.66
+Faithfulness: 0.00
+
+Query: What is the phone number for emergency ambulance, fire, and police services? (exact)
+Answer: For Ambulance, Fire, and Police emergencies, you should call 000. This number is for situations that require immediate assistance.
+
+If you're unsure about what to do in an emergency, don't hesitate to call 000 as well. They will guide you through the appropriate steps.
+
+For non-urgent police assistance, you can call 131444 or visit <http://police.vic.gov.au/palolr> instead.
+Precision: 1.00
+BERTScore F1: 0.86
+ROUGE-L F1: 0.38
+Faithfulness: 0.00
+
+Query: What is the phone number for non-urgent police assistance? (exact)
+Answer: For non-urgent police assistance, you can contact them at 131 444 or visit their website at <https://www.police.vic.gov.au/palolr>. If you're unsure about an emergency situation, always call Triple Zero (000) for immediate help.
+Precision: 1.00
+BERTScore F1: 0.89
+ROUGE-L F1: 0.47
+Faithfulness: 0.00
+
+Query: What is the phone number for emergencies on RMIT Melbourne campuses? (exact)
+Answer: For emergencies on RMIT Melbourne campuses, call 000 (Australia's emergency number) or contact Campus Security on 9925 3333. In case of non-urgent matters, you can also reach Campus Security at the same number. For more specific support services, visit RMIT's comprehensive list here: https://www.rmit.edu.au/students/support-services/health-safety-wellbeing
+Precision: 1.00
+BERTScore F1: 0.87
+ROUGE-L F1: 0.38
+Faithfulness: 0.00
+
+Query: What's the emergency number in Australia? (inferred)
+Answer: In Australia, the emergency number is 000. This number should be called for any life-threatening situations or urgent assistance from police, fire, or ambulance services. For non-urgent police assistance, you can call 131444.
+Precision: 1.00
+BERTScore F1: 0.81
+ROUGE-L F1: 0.28
+Faithfulness: 0.00
+
+Query: How to contact police for minor issues? (inferred)
+Answer: For minor issues, you can contact your local police station or non-emergency number. In the U.S., for example, you can dial 311 (in some cities) or 911 non-emergency number (7 or 8 in some areas) to reach your local police department. However, it's important to note that the specific numbers may vary depending on your location. Always check with your local authorities for the most accurate information.
+Precision: 1.00
+BERTScore F1: 0.76
+ROUGE-L F1: 0.18
+Faithfulness: 0.00
+
+Query: Where to study in Melbourne? (irrelevant)
+Answer: To find a suitable place to study in Melbourne, you have several options:
+
+1. Universities: Some popular universities in Melbourne include the University of Melbourne, Monash University, RMIT University, La Trobe University, and Deakin University. Each offers a variety of courses across different disciplines.
+
+2. TAFEs (Technical and Further Education institutions): TAFEs provide vocational education and training in areas such as business, IT, health, engineering, and more. Some well-known TAFEs in Melbourne are Victoria University Polytechnic, Box Hill Institute, and Chisholm Institute.
+
+3. Private colleges: There are numerous private colleges offering courses in various fields
+Precision: 0.00
+Faithfulness: 0.00
+Fallback Score: 0.00
+
+Query: What is the best cafe in Melbourne? (irrelevant)
+Answer: I don't have personal opinions, but I can provide some popular choices for cafes in Melbourne based on online reviews and recommendations:
+
+1. Seven Seeds - A specialty coffee roaster and café located in Brunswick East, known for its excellent coffee and brunch menu.
+2. Market Lane Coffee - With multiple locations across Melbourne, Market Lane Coffee is another popular choice for coffee lovers, offering high-quality brews and a relaxed atmosphere.
+3. Brother Baba Budan - A café in Carlton North that prides itself on its ethically sourced coffee beans and innovative coffee menu.
+4. Proud Mary - Originally from Collingwood, Proud Mary now has a location in New
+Precision: 0.00
+Faithfulness: 0.00
+Fallback Score: 0.00
+
+Query: How to make coffee? (irrelevant)
+Answer: To make a basic cup of coffee, you'll need a coffee maker, coffee grounds, water, and a coffee mug. Here's a simple step-by-step guide:
+
+1. Measure the coffee grounds: Use 1 to 2 tablespoons of coffee grounds per six ounces of water, depending on your taste preference.
+
+2. Add the coffee grounds to the filter: Place the filter in the coffee maker and add the measured coffee grounds.
+
+3. Rinse the filter: Before brewing, rinse the filter with hot water to remove any papery taste from the filter. Discard this water.
+
+4. Add water: Pour the appropriate amount of
+Precision: 0.00
+Faithfulness: 0.00
+Fallback Score: 0.00
+
+Query: What is mental health? (irrelevant)
+Answer: Mental health refers to a person's emotional, psychological, and social well-being. It affects how we think, feel, and act, and it also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
+
+Mental health can affect daily life, relationships, and even physical health. It's important to take care of mental health just as we do our physical health. This can include getting regular exercise, eating a healthy diet, getting enough sleep, avoiding drugs and alcohol, and practicing relaxation techniques like meditation or deep breathing exercises.
+
+If you or someone you know is struggling with mental
+Precision: 0.00
+Faithfulness: 0.00
+Fallback Score: 0.00
+
+Query: What is the point of studying? (irrelevant)
+Answer: The point of studying is to acquire knowledge, skills, and experiences that can help you achieve your personal and professional goals. Here's a breakdown of what studying can provide:
+
+1. Knowledge: Studying allows you to gain a deeper understanding of various subjects, which can broaden your perspective and increase your intelligence.
+
+2. Skills: Through studying, you develop essential skills such as critical thinking, problem-solving, and communication, which are valuable in both academic and professional settings.
+
+3. Experiences: Studying provides opportunities to engage in various activities, projects, and internships that can help you build a strong resume and network.
+
+4. Personal Growth: The process of studying encourages
+Precision: 0.00
+Faithfulness: 0.00
+Fallback Score: 0.00
+

@@ -1,0 +1,31 @@
+query,type
+"How far is Fitzroy from RMIT and what are the commute options?",exact
+"How far is Melbourne CBD from RMIT and what are the commute options?",exact
+"Why is Melbourne CBD popular among students?",exact
+"What's the typical weekly cost for shared housing in Melbourne CBD?",inferred
+"How long does it take to walk from RMIT to Melbourne CBD?",inferred
+"Where can I get a Myki?",exact
+"How much does getting a Myki card cost?",exact
+"Where can I add money to my Myki card?",exact
+"Where do I buy a Myki card?",inferred
+"What's the price for a concession Myki?",inferred
+"What is ahm OSHC and how can I contact them?",exact
+"What is Allianz Care Australia OSHC and how can I contact them?",exact
+"What is BUPA Australia OSHC and how can I contact them?",exact
+"How do I reach ahm for student health insurance?",inferred
+"What's Allianz OSHC support number?",inferred
+"How to apply & ABN entitlement",exact
+"Processing your ABN application",exact
+"Reference number ABN path",exact
+"Who can get an ABN in Australia?",inferred
+"How long to process ABN request?",inferred
+"What is the phone number for emergency ambulance, fire, and police services?",exact
+"What is the phone number for non-urgent police assistance?",exact
+"What is the phone number for emergencies on RMIT Melbourne campuses?",exact
+"What's the emergency number in Australia?",inferred
+"How to contact police for minor issues?",inferred
+Where to study in Melbourne?,irrelevant
+What is the best cafe in Melbourne?,irrelevant
+How to make coffee?,irrelevant
+What is mental health?,irrelevant
+What is the point of studying?,irrelevant

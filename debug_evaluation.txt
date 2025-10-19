@@ -1,0 +1,235 @@
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.7979045510292053
+ROUGE-L F1: 0.17475728155339806
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.769791305065155
+ROUGE-L F1: 0.12307692307692307
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.733444333076477
+ROUGE-L F1: 0.13541666666666666
+Faithfulness: 0.0
+
+Query Type: inferred
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.7904041409492493
+ROUGE-L F1: 0.1581920903954802
+Faithfulness: 0.0
+
+Query Type: inferred
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.7682501077651978
+ROUGE-L F1: 0.16541353383458646
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.8372712135314941
+ROUGE-L F1: 0.32876712328767116
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.806834876537323
+ROUGE-L F1: 0.25142857142857145
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.83808833360672
+ROUGE-L F1: 0.25000000000000006
+Faithfulness: 0.0
+
+Query Type: inferred
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.8131439089775085
+ROUGE-L F1: 0.3088235294117647
+Faithfulness: 0.0
+
+Query Type: inferred
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.788261353969574
+ROUGE-L F1: 0.1971830985915493
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.8414456844329834
+ROUGE-L F1: 0.26244343891402716
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.832550048828125
+ROUGE-L F1: 0.2647058823529412
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.8605936765670776
+ROUGE-L F1: 0.33879781420765026
+Faithfulness: 0.0
+
+Query Type: inferred
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.810142457485199
+ROUGE-L F1: 0.22707423580786026
+Faithfulness: 0.0
+
+Query Type: inferred
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.8257081508636475
+ROUGE-L F1: 0.33507853403141363
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.8653535842895508
+ROUGE-L F1: 0.4055944055944056
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.8200229406356812
+ROUGE-L F1: 0.1956521739130435
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.8831367492675781
+ROUGE-L F1: 0.4722222222222222
+Faithfulness: 0.0
+
+Query Type: inferred
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.7484332323074341
+ROUGE-L F1: 0.13333333333333336
+Faithfulness: 0.0
+
+Query Type: inferred
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.9279170632362366
+ROUGE-L F1: 0.6614173228346457
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.857609212398529
+ROUGE-L F1: 0.379746835443038
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.886961817741394
+ROUGE-L F1: 0.4727272727272728
+Faithfulness: 0.0
+
+Query Type: exact
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.8718644976615906
+ROUGE-L F1: 0.3764705882352941
+Faithfulness: 0.0
+
+Query Type: inferred
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.8110509514808655
+ROUGE-L F1: 0.27999999999999997
+Faithfulness: 0.0
+
+Query Type: inferred
+Is Relevant: True
+Is Fallback: False
+Precision: 1.0
+BERTScore F1: 0.7585091590881348
+ROUGE-L F1: 0.17886178861788618
+Faithfulness: 0.0
+
+Query Type: irrelevant
+Is Relevant: False
+Is Fallback: False
+Precision: 0.0
+Fallback Score (Faithfulness): 0.0
+Faithfulness: 0.0
+
+Query Type: irrelevant
+Is Relevant: False
+Is Fallback: False
+Precision: 0.0
+Fallback Score (Faithfulness): 0.0
+Faithfulness: 0.0
+
+Query Type: irrelevant
+Is Relevant: False
+Is Fallback: False
+Precision: 0.0
+Fallback Score (Faithfulness): 0.0
+Faithfulness: 0.0
+
+Query Type: irrelevant
+Is Relevant: False
+Is Fallback: False
+Precision: 0.0
+Fallback Score (Faithfulness): 0.0
+Faithfulness: 0.0
+
+Query Type: irrelevant
+Is Relevant: False
+Is Fallback: False
+Precision: 0.0
+Fallback Score (Faithfulness): 0.0
+Faithfulness: 0.0
+
