@@ -53,11 +53,11 @@ class RAGPipeline:
         if cached_response:
             return cached_response
             
-        # Optimize: encode single query efficiently
         query_embedding = self.embedder.encode([question])
-        results = self.store.query(query_embeddings=query_embedding, n_results=n_results)
-        # Optimize: limit to top 3 documents and join efficiently
-        context = "\n".join(results["documents"][0][:3]) if results and results.get("documents") else ""
+        results = self.store.query(query_embeddings=query_embedding, n_results=n_results,
+                                   where={"source": {"$in": ["myki", "housing", "oshc_providers", "work_and_money", "emergency_services"]}})
+        
+        context = "\n".join(results["documents"][0][:n_results]) if results and results.get("documents") else ""
         # Get personality configuration
         system_prompt, user_template, temperature = get_personality_config(settings.personality_level)
         

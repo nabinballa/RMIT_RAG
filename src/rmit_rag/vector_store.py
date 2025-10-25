@@ -35,12 +35,11 @@ class VectorStore:
         """Add documents with precomputed embeddings and optional metadatas."""
         self._collection.add(documents=list(documents), embeddings=list(embeddings), ids=list(ids), metadatas=list(metadatas) if metadatas is not None else None)
 
-    def query(self, *, query_embeddings: Sequence[Sequence[float]], n_results: int = 5):
+    def query(self, *, query_embeddings: Sequence[Sequence[float]], n_results: int = 5, where: dict | None = None):
         """Retrieve top matches for the given query embeddings."""
         return self._collection.query(
             query_embeddings=list(query_embeddings), 
             n_results=n_results,
             include=["documents", "metadatas", "distances"],  # Only get what we need
-            # Optimize for speed - disable metadata filtering if not needed
-            where=None,  # No metadata filtering for faster queries
+            where=where
         )
