@@ -1,0 +1,377 @@
+Average Retrieval Precision: 0.83
+Average BERTScore F1 (Relevant Queries): 0.81
+Average ROUGE-L F1 (Relevant Queries): 0.24
+Average Faithfulness Score (Irrelevant Queries Only): 0.00
+Average Fallback Accuracy (Irrelevant Queries): 0.00
+
+Average Response Time (seconds): 18.682
+
+Query: How far is Fitzroy from RMIT and what are the commute options? (exact)
+Answer: The distance between Fitzroy and RMIT (Royal Melbourne Institute of Technology) City Campus can vary depending on the exact locations within Fitzroy. Generally, it's approximately 2.5 kilometers or a 30-minute walk.
+
+For commuting, there are several options:
+
+1. Walking: As mentioned, it's a walkable distance.
+2. Tram: You can take the No. 86 tram from Brunswick St in Fitzroy to Swanston St near RMIT.
+3. Bus: Several bus routes also connect Fitzroy and RMIT, such as the No. 96 and No. 112.
+4. B
+Precision: 1.00
+BERTScore F1: 0.77
+ROUGE-L F1: 0.14
+Faithfulness: 0.00
+Response Time (seconds): 15.367
+
+Query: How far is Melbourne CBD from RMIT and what are the commute options? (exact)
+Answer: The RMIT is located in the heart of Melbourne CBD, making it conveniently accessible. Some common commute options include:
+
+1. Tram: RMIT is served by several trams, with routes 96, 112, and 48 running frequently along Swanston Street, which is the main road that passes through the university.
+
+2. Train: The closest train station to RMIT is Flagstaff Station, located on the corner of La Trobe Street and Franklin Street. Trains run regularly from various suburbs in Melbourne.
+
+3. Bus: Several bus routes also serve RMIT, with stops along Elizabeth Street, Swanston Street, and La Trobe Street.
+Precision: 1.00
+BERTScore F1: 0.76
+ROUGE-L F1: 0.13
+Faithfulness: 0.00
+Response Time (seconds): 20.495
+
+Query: Why is Melbourne CBD popular among students? (exact)
+Answer: Melbourne CBD (Central Business District) is popular among students for several reasons:
+
+1. Access to Education: The CBD is home to many universities, colleges, and educational institutions, making it convenient for students to attend classes.
+
+2. Vibrant Culture: Melbourne CBD offers a rich cultural scene with numerous art galleries, museums, theaters, and music venues.
+
+3. Shopping and Dining: The CBD has a wide variety of shopping centers, boutiques, and restaurants, catering to diverse tastes and budgets.
+
+4. Public Transport: The CBD is well-served by public transport, including trams, trains, and buses, making it easy for students to
+Precision: 1.00
+BERTScore F1: 0.74
+ROUGE-L F1: 0.16
+Faithfulness: 0.00
+Response Time (seconds): 20.655
+
+Query: What’s the typical weekly cost for shared housing in Melbourne CBD, and how far is it from RMIT? (inferred)
+Answer: To provide an accurate answer, I'd need to consult some recent data. As of my last update, the average weekly rent for a shared room in Melbourne CBD can range from AUD 150 to AUD 250. However, prices may vary depending on factors such as location, amenities, and quality of the accommodation.
+
+Regarding the distance from shared housing in the CBD to RMIT, it largely depends on which campus you're referring to. The RMIT City Campus is located in the heart of Melbourne CBD, making it easily accessible from various locations within the city center. Other campuses like RMIT Brunswick and RMIT Bundoora are located further away and would require a longer
+Precision: 1.00
+BERTScore F1: 0.76
+ROUGE-L F1: 0.14
+Faithfulness: 0.00
+Response Time (seconds): 20.448
+
+Query: How long does it take to walk from RMIT to Melbourne CBD, and what public transport options are available? (inferred)
+Answer: It typically takes around 15-20 minutes to walk from RMIT to Melbourne CBD, depending on your specific starting point and destination within the CBD.
+
+For public transportation, you can take several options:
+
+1. Tram: The No. 96 tram runs along Swanston Street, which passes through both RMIT and the CBD.
+2. Train: The closest train station to RMIT is Flagstaff Station, which provides services to various destinations within Melbourne.
+3. Bus: Several bus routes also connect RMIT with the CBD. Check the Public Transport Victoria website for specific routes and schedules.
+
+Always ensure to check the latest updates on public transportation before your journey, as sched
+Precision: 1.00
+BERTScore F1: 0.76
+ROUGE-L F1: 0.15
+Faithfulness: 0.00
+Response Time (seconds): 20.171
+
+Query: Where can I get a Myki? (exact)
+Answer: You can obtain a Myki card from various locations such as vending machines at train stations, major tram stops, and selected retail outlets. You can also order one online and have it delivered to you. For more information, you can visit the Public Transport Victoria website or call 1800 800 007.
+Precision: 1.00
+BERTScore F1: 0.84
+ROUGE-L F1: 0.29
+Faithfulness: 0.00
+Response Time (seconds): 17.621
+
+Query: How much does getting a Myki card cost? (exact)
+Answer: The cost of getting a Myki card varies depending on the type. As of my last update, a full fare Adult Myki costs $6, and a Child Myki costs $3. However, I recommend checking the official Public Transport Victoria website for the most current prices.
+Precision: 1.00
+BERTScore F1: 0.80
+ROUGE-L F1: 0.24
+Faithfulness: 0.00
+Response Time (seconds): 16.604
+
+Query: Where can I add money to my Myki card? (exact)
+Answer: You can add money to your Myki card at various locations, including:
+
+1. Myki machines located at train stations, trams, and buses
+2. 7-Eleven stores
+3. Post Offices
+4. PTV Hubs
+5. Online through the myki.com.au website or Myki mobile app
+6. By calling 136 196 (24 hours a day, 7 days a week)
+7. At selected newsagents and convenience stores that display the Myki logo.
+
+You can also top up your card using a credit or debit card, V/Line ticket voucher, or money on a Myki card
+Precision: 1.00
+BERTScore F1: 0.84
+ROUGE-L F1: 0.25
+Faithfulness: 0.00
+Response Time (seconds): 19.631
+
+Query: Where can I buy a Myki card, and what is the initial cost? (inferred)
+Answer: You can buy a Myki card at various locations such as train stations, trams, and selected retail outlets. The initial cost varies depending on the type of Myki you choose. For an Adult Myki, it costs $6, and for a Child (5-11 years) or Concession Myki, it costs $3. Remember to check the latest prices as they may have changed.
+Precision: 1.00
+BERTScore F1: 0.81
+ROUGE-L F1: 0.25
+Faithfulness: 0.00
+Response Time (seconds): 17.110
+
+Query: What do I do if I lost my card and where to top up Myki card? (inferred)
+Answer: If you've lost your Myki card, you should report it as lost as soon as possible. You can do this online, by phone, or at a Metcard and Myki retail outlet. Once reported as lost, the remaining value on the card will be protected for a period of time.
+
+To top up your Myki card, you can visit a Metcard and Myki retail outlet, use the myki mobile app, or top up online using a credit or debit card. If you've reported your lost card and received a replacement, you can transfer the remaining value from the lost card to the new one.
+
+Here are the details for each method:
+
+1. Visit a Metcard
+Precision: 1.00
+BERTScore F1: 0.79
+ROUGE-L F1: 0.18
+Faithfulness: 0.00
+Response Time (seconds): 19.891
+
+Query: What is ahm OSHC and how can I contact them? (exact)
+Answer: ahm OSHC stands for Australian Health Management (AHM) Over seas Students Health Cover. It is a health insurance product designed for international students studying in Australia, provided by Medibank Private.
+
+You can contact ahm OSHC through the following channels:
+
+- Phone: 134148 (within Australia) or +61 3 8635 9800 (outside Australia)
+- Email: oshc@ahm.com.au
+- Website: https://www.ahmoshc.com.au/
+
+For specific inquiries or to purchase a policy, you can visit their official website or contact them via the provided
+Precision: 1.00
+BERTScore F1: 0.84
+ROUGE-L F1: 0.26
+Faithfulness: 0.00
+Response Time (seconds): 20.104
+
+Query: What is the phone number for emergencies on RMIT Melbourne campuses? (exact)
+Answer: For emergencies on RMIT Melbourne campuses, call 000 (Australia's emergency number) or contact Campus Security on 9925 3333. In case of non-urgent matters, you can also reach Campus Security at the same number. For more specific support services, visit RMIT's comprehensive list here: https://www.rmit.edu.au/students/support-services/health-safety-wellbeing
+Precision: 1.00
+BERTScore F1: 0.87
+ROUGE-L F1: 0.38
+Faithfulness: 0.00
+Response Time (seconds): 18.259
+
+Query: What is BUPA Australia OSHC and how can I contact them? (exact)
+Answer: BUPA Australia OSHC (Overseas Student Health Cover) is a health insurance designed for international students studying in Australia. It provides medical cover for students during their study period, as a requirement for obtaining a student visa.
+
+To contact BUPA Australia OSHC, you can use the following methods:
+
+- Phone: 1800 888 942 (within Australia) and +61 3 9937 4223 (offshore)
+- Email: oshc@bupa.com.au
+- Website: www.bupa.com.au/oshc
+
+You can also find more information about the
+Precision: 1.00
+BERTScore F1: 0.86
+ROUGE-L F1: 0.34
+Faithfulness: 0.00
+Response Time (seconds): 19.014
+
+Query: What is my option for OSHC and which one is preferred for RMIT students? (inferred)
+Answer: As a assistant, I don't have personal preferences, but I can provide you with information to help you make an informed decision. For RMIT students, the preferred option is often the OSHC (Overseas Student Health Cover) provided by Medibank, as it is the preferred provider by RMIT and is included in your tuition fees if you accept the offer through the RMIT Direct Offer Program. However, you also have the option to choose another approved OSHC provider, but it's important to ensure that the coverage meets the minimum requirements set by the Australian government and RMIT. You can find more information about this on the RMIT website or by contacting the international student support services at RMIT.
+Precision: 1.00
+BERTScore F1: 0.80
+ROUGE-L F1: 0.19
+Faithfulness: 0.00
+Response Time (seconds): 20.976
+
+Query: Which number should I call if I fell unsafe on campus? (inferred)
+Answer: If you feel unsafe on RMIT Melbourne campuses, you can call Campus Security at +61399253333 or visit the Safety and Security webpage at https://www.rmit.edu.au/about/our-locations-and-facilities/facilities/safety-security/campus-security for more information and resources.
+Precision: 1.00
+BERTScore F1: 0.94
+ROUGE-L F1: 0.68
+Faithfulness: 0.00
+Response Time (seconds): 18.479
+
+Query: What is a TFN? ( exact)
+Answer: A Tax File Number (TFN) is a personal reference number issued by the Australian Taxation Office (ATO). It is used to manage your tax affairs in Australia, including income tax, superannuation, and other government services. You can find more information about TFN on the ATO's website at <https://www.ato.gov.au/individuals/taxfile-number/>.
+Precision: 1.00
+BERTScore F1: 0.87
+ROUGE-L F1: 0.43
+Faithfulness: 0.00
+Response Time (seconds): 17.431
+
+Query: How to apply for a TFN? (exact)
+Answer: To apply for a Tax File Number (TFN), you can follow these steps:
+
+1. Visit the Australian Taxation Office (ATO) website at <https://www.ato.gov.au/individuals-and-families/tax-file-number/>
+2. Click on the "Apply for a TFN" button.
+3. Choose the option that best suits your situation, such as if you are an Australian resident, non-resident, or applying for a TFN for a deceased person.
+4. Follow the instructions provided to complete the application process.
+
+Alternatively, you can also apply for a TFN by calling the ATO on their dedicated phone line
+Precision: 1.00
+BERTScore F1: 0.83
+ROUGE-L F1: 0.27
+Faithfulness: 0.00
+Response Time (seconds): 20.383
+
+Query: What documents are needed for TFN application? (exact)
+Answer: To apply for a Tax File Number (TFN), you will need certain identity documents. Here's a list of documents that can be used for verification:
+
+1. Australian passport
+2. Foreign passport
+3. Australian birth certificate
+4. Certificate of Australian Citizenship
+5. Permanent Resident Visa (subclass 157 and 159)
+6. Australian driver's license
+7. Australian State or Territory photo identity card
+8. Australian proof of age or photo card
+9. Passport issued by the Commonwealth of Nations, New Zealand, or a Northern European country
+10. A bank card with your name and signature on it
+Precision: 1.00
+BERTScore F1: 0.75
+ROUGE-L F1: 0.15
+Faithfulness: 0.00
+Response Time (seconds): 19.962
+
+Query: Why do I need a TFN and what is TFN for? (inferred)
+Answer: A Tax File Number (TFN) is a unique number issued by the Australian Taxation Office (ATO) to individuals and organizations to manage their tax affairs in Australia. You need a TFN because it is used to calculate, report and administer tax and other government payments and benefits.
+
+The TFN is essential for:
+
+1. Working in Australia - If you are an employee, your employer will withhold the correct amount of tax from your pay if you provide them with your TFN.
+2. Lodging an income tax return - You need a TFN to lodge an income tax return, even if you have no tax to pay.
+3. Receiving certain government payments and benefits - If you
+Precision: 1.00
+BERTScore F1: 0.80
+ROUGE-L F1: 0.22
+Faithfulness: 0.00
+Response Time (seconds): 20.043
+
+Query: When will I receive my TFN after applying, and why is it important for employment? (inferred)
+Answer: After applying for a Tax File Number (TFN), it usually takes around 28 days to receive it by mail. However, you can also access it online through myGov or the AUSkey service immediately after application.
+
+The TFN is essential for employment because it's used by employers to report your tax information to the Australian Taxation Office (ATO). Having a TFN ensures that your income is correctly taxed and that you receive any relevant government entitlements, such as the Age Pension or Family Tax Benefit. It also allows you to lodge an income tax return if necessary.
+Precision: 1.00
+BERTScore F1: 0.82
+ROUGE-L F1: 0.20
+Faithfulness: 0.00
+Response Time (seconds): 19.471
+
+Query: How can I find my minimum pay rate? (exact)
+Answer: To find your minimum pay rate, you can follow these steps:
+
+1. Determine your industry and occupation: Different industries and occupations have different minimum wage rates.
+
+2. Check the Fair Work Ombudsman website: The Fair Work Ombudsman provides information on minimum wages, awards, and entitlements for Australian workers. You can visit their website (www.fairwork.gov.au) and use their 'Find my award' tool to find the relevant award for your industry and occupation.
+
+3. Look up the pay rates: Once you have found the relevant award, look up the pay rates for your specific job role. The award will provide a minimum wage rate, but
+Precision: 1.00
+BERTScore F1: 0.78
+ROUGE-L F1: 0.17
+Faithfulness: 0.00
+Response Time (seconds): 20.059
+
+Query: What happen during the processing of my ABN application? (exact)
+Answer: During the processing of your ABN application, several key events occur:
+
+1. Application Submission: You submit your application for an Australian Business Number (ABN) through the Australian Business Register (ABR) online service.
+
+2. Verification: The Australian Taxation Office (ATO) verifies your identity and the authenticity of the information you provided.
+
+3. Approval: If your application is approved, you will receive a confirmation screen or email with your ABN and other important details.
+
+4. Registration for Other Obligations: You can apply for other registrations such as the Tax File Number (TFN), Goods and Services Tax (GST), or Australian Business Register
+Precision: 1.00
+BERTScore F1: 0.79
+ROUGE-L F1: 0.21
+Faithfulness: 0.00
+Response Time (seconds): 20.037
+
+Query: What are the National Employment Standards (NES)? (exact)
+Answer: The National Employment Standards (NES) are a set of minimum entitlements for employees in Australia, covering 10 minimum employment conditions including maximum weekly hours, requests for flexible working arrangements, parental leave, annual leave, personal/carer's leave, and more. For more information, visit: https://www.fairwork.gov.au/leave/national-employment-standards/the-10-national-employment-standards
+Precision: 1.00
+BERTScore F1: 0.82
+ROUGE-L F1: 0.27
+Faithfulness: 0.00
+Response Time (seconds): 18.444
+
+Query: What is ahm OSHC and how can I contact them? (inferred)
+Answer: ahm OSHC stands for Australian Health Management (AHM) Over seas Students Health Cover. It is a health insurance product designed for international students studying in Australia, provided by Medibank Private.
+
+You can contact ahm OSHC through the following channels:
+
+- Phone: 134148 (within Australia) or +61 3 8635 9800 (outside Australia)
+- Email: oshc@ahm.com.au
+- Website: https://www.ahmoshc.com.au/
+
+For specific inquiries or to purchase a policy, you can visit their official website or contact them via the provided
+Precision: 1.00
+BERTScore F1: 0.84
+ROUGE-L F1: 0.26
+Faithfulness: 0.00
+Response Time (seconds): 20.493
+
+Query: Why is an ABN important for freelancers, and what steps are involved in applying for one? (inferred)
+Answer: An ABN is important for freelancers because it helps them to operate legally as a business entity in Australia. It allows them to claim GST credits, invoice clients with a tax invoice, and avoid paying income tax on their earnings at a higher personal tax rate.
+
+The steps involved in applying for an ABN are:
+
+1. Check if you're eligible: You can apply for an ABN if you're carrying on an enterprise in Australia, which includes activities done for a profit or gain.
+
+2. Gather your documents: You will need to provide some personal and business details, such as your identity, the nature of your business, and your tax file number (TFN).
+Precision: 1.00
+BERTScore F1: 0.79
+ROUGE-L F1: 0.18
+Faithfulness: 0.00
+Response Time (seconds): 19.594
+
+Query: Where to study in Melbourne? (irrelevant)
+Answer: To find a place to study in Melbourne, you might want to consider institutions located near the Study Melbourne Hub at 17 Hardware Lane, as it offers various resources and support for international students. Additionally, you can explore other universities and colleges in Melbourne, such as the University of Melbourne, RMIT University, and La Trobe University, which are renowned for their quality education and student services.
+Precision: 0.00
+Faithfulness: 0.00
+Fallback Score: 0.00
+Response Time (seconds): 16.531
+
+Query: What is the best cafe in Melbourne? (irrelevant)
+Answer: I don't have personal opinions, but I can provide some popular choices for cafes in Melbourne based on online reviews and recommendations:
+
+1. Seven Seeds - A specialty coffee roaster and café located in Brunswick East, known for its excellent coffee and brunch menu.
+2. Market Lane Coffee - With multiple locations across Melbourne, Market Lane Coffee is another popular choice for coffee lovers, offering high-quality brews and a relaxed atmosphere.
+3. Brother Baba Budan - A café in Carlton North that prides itself on its ethically sourced coffee beans and innovative coffee menu.
+4. Proud Mary - Originally from Collingwood, Proud Mary now has a location in New
+Precision: 0.00
+Faithfulness: 0.00
+Fallback Score: 0.00
+Response Time (seconds): 17.041
+
+Query: How to make coffee? (irrelevant)
+Answer: To make a basic cup of coffee, you'll need a coffee maker, coffee grounds, water, and a coffee mug. Here's a simple step-by-step guide:
+
+1. Measure the coffee grounds: Use 1 to 2 tablespoons of coffee grounds per six ounces of water, depending on your taste preference.
+
+2. Add the coffee grounds to the filter: Place the filter in the coffee maker and add the measured coffee grounds.
+
+3. Rinse the filter: Before brewing, rinse the filter with hot water to remove any papery taste from the filter. Discard this water.
+
+4. Add water: Pour the appropriate amount of
+Precision: 0.00
+Faithfulness: 0.00
+Fallback Score: 0.00
+Response Time (seconds): 15.615
+
+Query: What is mental health? (irrelevant)
+Answer: Mental health refers to a person's emotional, psychological, and social well-being. It affects how we think, feel, and act, and it also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood.
+
+Mental health can affect daily life, relationships, and even physical health. It's important to take care of mental health just as we do our physical health. This can include getting regular exercise, eating a healthy diet, getting enough sleep, avoiding drugs and alcohol, and practicing relaxation techniques like meditation or deep breathing exercises.
+
+If you or someone you know is struggling with mental
+Precision: 0.00
+Faithfulness: 0.00
+Fallback Score: 0.00
+Response Time (seconds): 15.589
+
+Query: What is the point of studying? (irrelevant)
+Answer: The point of studying is to acquire knowledge, skills, and experience that will help you in your future career and personal life. Study Melbourne provides support for job-seeking students through free programs, events, one-on-one employment advice, and Hub support. It's also common to work part-time or casually while studying, but it's important to ensure that work does not interfere with your studies. To prepare for interviews, you can practice using the STARR method (Situation, Task, Action, Result, Reflection) and think of behavioral examples. This will help you demonstrate your skills and experiences effectively during an interview.
+Precision: 0.00
+Faithfulness: 0.00
+Fallback Score: 0.00
+Response Time (seconds): 14.941
+

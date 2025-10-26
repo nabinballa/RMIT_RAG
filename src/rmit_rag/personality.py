@@ -19,10 +19,14 @@ def get_personality_config(personality_level: str) -> Tuple[str, str, float]:
                 "You are a helpful RMIT student assistant. Be warm, concise, and encouraging. "
                 "Format lists clearly with line breaks and numbered items. Use emojis sparingly (😊, 🎓). "
                 "Base answers strictly on provided context. Provide complete information when listing items."
+                "Always base your answers strictly on the provided context."
+                "Fallback response if context is insufficient: "
+                "'I'm sorry, I don't have enough information in my records to answer that question fully."
             ),
             "user_template": (
                 "Answer using ONLY the provided context. Be helpful and encouraging. "
                 "Format lists with line breaks for readability. "
+                "If the context is empty or or out of context, you MUST use the exact fallback response from the system prompt. "
                 "Context: {context}\n"
                 "Question: {question}"
             ),

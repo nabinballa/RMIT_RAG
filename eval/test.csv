@@ -1,0 +1,31 @@
+query,type
+"How far is Fitzroy from RMIT and what are the commute options?",exact
+"How far is Melbourne CBD from RMIT and what are the commute options?",exact
+"Why is Melbourne CBD popular among students?",exact
+"What’s the typical weekly cost for shared housing in Melbourne CBD, and how far is it from RMIT?",inferred
+"How long does it take to walk from RMIT to Melbourne CBD, and what public transport options are available?",inferred
+"Where can I get a Myki?",exact
+"How much does getting a Myki card cost?",exact
+"Where can I add money to my Myki card?",exact
+"Where can I buy a Myki card, and what is the initial cost?",inferred
+"What do I do if I lost my card and where to top up Myki card?",inferred
+"What is ahm OSHC and how can I contact them?",exact
+"What is the phone number for emergencies on RMIT Melbourne campuses?",exact
+"What is BUPA Australia OSHC and how can I contact them?",exact
+"What is my option for OSHC and which one is preferred for RMIT students?",inferred
+"Which number should I call if I fell unsafe on campus?",inferred
+What is a TFN?, exact
+"How to apply for a TFN?",exact
+What documents are needed for TFN application?,exact
+Why do I need a TFN and what is TFN for?,inferred
+"When will I receive my TFN after applying, and why is it important for employment?",inferred
+"How can I find my minimum pay rate?",exact
+"What happen during the processing of my ABN application?",exact
+"What are the National Employment Standards (NES)?",exact
+"What is ahm OSHC and how can I contact them?",inferred
+"Why is an ABN important for freelancers, and what steps are involved in applying for one?",inferred
+Where to study in Melbourne?,irrelevant
+What is the best cafe in Melbourne?,irrelevant
+How to make coffee?,irrelevant
+What is mental health?,irrelevant
+What is the point of studying?,irrelevant
